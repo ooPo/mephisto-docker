@@ -11,7 +11,7 @@ ENTRYPOINT ["/usr/local/mephisto/ctu"]
 
 RUN \
   apt-get -y update && \
-  apt-get -y install clang-5.0 git liblz4-dev make python python-capstone python-pip && \
+  apt-get -y install clang git liblz4-dev make python python-capstone python-pip && \
   apt-get -y clean autoclean autoremove && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
 
