@@ -1,0 +1,17 @@
+FROM mephisto/builder
+MAINTAINER Naomi Peori <naomi@peori.ca>
+
+WORKDIR /build
+
+ENTRYPOINT ["/usr/local/mephisto/ctu"]
+
+##
+## mephisto
+##
+
+RUN \
+  cd /usr/local && \
+    git clone --recursive https://github.com/reswitched/Mephisto mephisto && \
+    cd mephisto && \
+      pip install -r requirements.txt && \
+      make -j
